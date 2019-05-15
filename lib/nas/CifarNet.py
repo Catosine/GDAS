@@ -33,6 +33,7 @@ class NetworkCIFAR(nn.Module):
 
     stem_multiplier = 3
     C_curr = stem_multiplier*C
+    # Head Structure: 3x3 conv -> BatchNorm
     self.stem = nn.Sequential(
       nn.Conv2d(3, C_curr, 3, padding=1, bias=False),
       nn.BatchNorm2d(C_curr)
